@@ -20,6 +20,7 @@
         </nav>
         <div class="ml-5 mt-3 mb-3">
             <h1 class="font-bold text-[32px]">{{$heading}}</h1>
+            <h1>Hi</h1>
             
         </div>
         {{$slot}}
