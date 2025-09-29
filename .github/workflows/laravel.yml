@@ -28,7 +28,11 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
-    - name: Clear & Rebuild caches
+    - name: Clear caches
+      env:
+        CACHE_DRIVER: array
+        SESSION_DRIVER: array
+        QUEUE_CONNECTION: sync
       run: |
         php artisan config:clear
         php artisan cache:clear
