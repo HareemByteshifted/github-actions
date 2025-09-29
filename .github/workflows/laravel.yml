@@ -28,17 +28,6 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
-    - name: Clear caches
-      env:
-        CACHE_DRIVER: array
-        SESSION_DRIVER: array
-        QUEUE_CONNECTION: sync
-      run: |
-        php artisan config:clear
-        php artisan cache:clear
-        php artisan view:clear
-        php artisan route:clear
-        php artisan view:cache
     - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
       env:
         DB_CONNECTION: sqlite
